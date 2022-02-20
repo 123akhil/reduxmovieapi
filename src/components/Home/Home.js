@@ -10,11 +10,12 @@ import {
 
 const Home = () => {
   const dispatch = useDispatch();
-  // const movieText = "Harry";
+  const movieText = "Harry";
+  const showText = "Friends";
   // api call using sychronus action creator but we will be using thunk middleware to make it async action creator
   useEffect(() => {
-    dispatch(fetchAsyncMovies());
-    dispatch(fetchAsyncShows());
+    dispatch(fetchAsyncMovies(movieText));
+    dispatch(fetchAsyncShows(showText));
     // const fetchMovies = async () => {
     // const response = await movieApi
     //   .get(`?apiKey=${APIKey}&s=${movieText}&type=movie`)

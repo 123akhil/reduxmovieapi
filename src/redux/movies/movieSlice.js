@@ -5,20 +5,20 @@ import { APIKey } from "../../common/apis/MovieApiKey";
 //take two arguments first one is simple string identifier for our async action creator(naming convention first name/ then function name itself) 2nd parameter is payload creator callback function
 export const fetchAsyncMovies = createAsyncThunk(
   "movies/fetchAsyncMovies",
-  async () => {
-    const movieText = "Harry";
+  async (term) => {
+    // const movieText = "Harry";
     const response = await movieApi.get(
-      `?apiKey=${APIKey}&s=${movieText}&type=movie`
+      `?apiKey=${APIKey}&s=${term}&type=movie`
     );
     return response.data;
   }
 );
 export const fetchAsyncShows = createAsyncThunk(
   "movies/fetchAsyncShows",
-  async () => {
-    const seriesText = "Friends";
+  async (term) => {
+    // const seriesText = "Friends";
     const response = await movieApi.get(
-      `?apiKey=${APIKey}&s=${seriesText}&type=series`
+      `?apiKey=${APIKey}&s=${term}&type=series`
     );
     return response.data;
   }
